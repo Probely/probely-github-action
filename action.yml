@@ -1,0 +1,25 @@
+# action.yml
+name: 'Probely scan'
+description: 'Scan specified target with Probely'
+inputs:
+  api-key:
+    required: true
+  target-id:
+    required: true
+  region:
+    default: "eu"
+  scan-profile:
+    default: ""
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - "--api-key"
+    - ${{ inputs.api-key }}
+    - "--target-id"
+    - ${{ inputs.target-id }}
+    - "--region"
+    - ${{ inputs.region }}
+    - "--scan-profile"
+    - ${{ inputs.scan-profile }}
+
