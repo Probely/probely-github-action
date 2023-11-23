@@ -24,7 +24,17 @@ def scan(api_key: str, target_id: str, base_url: str, scan_profile: str):
         json={"scan_profile": scan_profile} if scan_profile else {},
         headers={"Authorization": f"JWT {api_key}"},
     )
-    response.raise_for_status()
+    try:
+        response.raise_for_status()
+
+    except requests.HTTPError:
+        print("Received error from Probely's API when starting the scan:")
+        print(f"Status code: {response.status_code}")
+        print(f"Content: {response.content.decode()}")
+        exit(1)
+
+    else:
+        print("Scan started successfully.")
 
 
 if __name__ == "__main__":
