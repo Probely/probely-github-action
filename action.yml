@@ -1,15 +1,20 @@
 # action.yml
-name: 'Probely scan'
-description: 'Scan specified target with Probely'
+name: 'Probely security scan'
+description: 'Scan your application for vulnerabilities with Probely'
 inputs:
   api-key:
+    description: Probely's API Key
     required: true
   target-id:
+    description: Probely's identified of the target to scan
     required: true
   region:
+    description: Probely's region where your account is hosted
     default: "eu"
   scan-profile:
+    description: The scan profile to use in the scan. If not defined, the scan profile will be the one defined in the target settings.
     default: ""
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -23,3 +28,7 @@ runs:
     - "--scan-profile"
     - ${{ inputs.scan-profile }}
 
+branding:
+  icon: 'chevron-right'
+  color: 'blue'
+  
