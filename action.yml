@@ -1,5 +1,5 @@
 # action.yml
-name: 'Probely security scan'
+name: 'Probely Security Scan'
 description: 'Scan your application for vulnerabilities with Probely'
 inputs:
   api-key:
