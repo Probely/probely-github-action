@@ -1,6 +1,6 @@
 # action.yml
-name: 'Probely Security Scan'
-description: 'Scan your application for vulnerabilities with Probely'
+name: 'Probely DAST for Securit Scans'
+description: 'Scan your application for vulnerabilities using Probely DAST'
 inputs:
   api-key:
     description: Probely's API Key
