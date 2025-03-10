@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: probely-github-action
+spec:
+  type: external-tooling
+  lifecycle: "-"
+  owner: probely-engine
